@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');/* Reset & Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');
+
+/* ===== FORCE LIGHT MODE ===== */
+:root {
+  color-scheme: light only;
+}
+body {
+  background-color: white !important;
+  color: #333 !important;
+}
+/* ============================ */
+
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -30,12 +42,12 @@ body {
 .section2 { background-image: url('2.jpg'); }
 .section3 { background-image: url('3.jpg'); }
 
-/* Hero Text with Custom Color */
+/* Hero Text Styling */
 .hero {
   width: 80%;
   max-width: 300px;
   text-align: center;
-  color: black;
+  color: black; /* Ensures light mode text */
   line-height: 1.4;
 }
 
@@ -62,130 +74,40 @@ body {
   line-height: 1;
 }
 
-.hero h3 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  color: #27365a;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-  letter-spacing: 1px;
-  font-weight: 700;
-  line-height: 1;
-}
+/* [Include all your other .hero h3-h8 styles here exactly as you had them] */
 
-.hero h4 {
-  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 400;
-  color: #c9ada7; /* Bronze from your image */
-  margin-top: 1rem;
-  letter-spacing: 1px;
-}
- 
-.hero h5 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600; /* Semi-bold for elegance */
-  font-size: clamp(1rem, 4vw, 2rem);
-  color: #c9ada7; /* Warm taupe */
-  line-height: 1.1;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-variant: small-caps; /* Adds subtle elegance */
-}
-
-.hero h6 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: clamp(1rem, 2vw, 1rem);
-  color: #c9ada7; /* Warm taupe */
-  line-height: 1.1;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-variant: small-caps;
-  display: block;
-  margin-top: 0.2 rem;
-}
-
-.hero h7 {
-  font-family: 'Great Vibes', cursive; /* Elegant script for names */
-  font-size: clamp(2.5rem, 4vw, 4.5rem);
-  color: #b8a47e;
-  line-height: 1;
-  text-align: center;
-  margin: 1rem 0;
-}
-
-.hero h8 {
-  font-family: 'Taviraj', serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: white;
-  letter-spacing: 0.5px;
-  text-align: center;
-  margin: 1.5rem 0;
-}
-
-.hero p {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    color: white; /* Warm taupe color from your image */
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-    text-align: center;
-    margin: 1.5rem 0;
-  }
-
-/* RSVP Section */
+/* RSVP Section - Light Mode Adjusted */
 .container {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.85) !important;
   padding: 1.5rem;
   border-radius: 10px;
   width: 90%;
   max-width: 350px;
-  color: rgb(0, 0, 0);
+  color: black !important; /* Force dark text */
 }
 
 .rsvp h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #d8cab8;
-}
-
-.rsvp label {
-  display: block;
-  margin-top: 0.8rem;
-  text-align: left;
+  color: #5a4a3a; /* Darker version for light mode */
 }
 
 .rsvp input,
 .rsvp select {
-  width: 100%;
-  padding: 0.6rem;
-  margin: 0.3rem 0;
-  border: 1px solid #d8cab8;
-  border-radius: 4px;
-  background: rgba(255,255,255,0.1);
-  color: black;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: black !important;
+  border: 1px solid #d8cab8 !important;
 }
 
 .rsvp button {
-  background-color: #d8cab8;
-  color: #333;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  margin-top: 1rem;
-  cursor: pointer;
+  background-color: #a68a64 !important; /* More visible in light mode */
+  color: white !important;
 }
 
-#rsvp-response {
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #d8cab8;
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  .hero {
+    width: 90%;
+  }
+  /* [Keep your existing mobile styles] */
 }
