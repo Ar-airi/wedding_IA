@@ -15,7 +15,7 @@ html, body {
 }
 /* ============================ */
 
-/* Font Imports (EXACTLY AS YOU HAD) */
+/* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');
@@ -23,10 +23,11 @@ html, body {
 /* ===== BACKGROUND SECTION WITH CONTAINED SHAPE ===== */
 .section {
   width: 100%;
-  max-width: 430px; /* optional: limit max width */
-  aspect-ratio: 765 / 1436; /* phone-like shape */
+  max-width: 430px;
+  height: 100vh;
+  max-height: 932px;
   background-size: contain;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
@@ -34,20 +35,28 @@ html, body {
   justify-content: center;
   padding: 20px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
-/* Override for small height screens */
-@media (max-height: 500px) {
+.section1 { 
+  background-image: url('1.jpg');
+  background-color: #f8f4e9;
+}
+.section2 { 
+  background-image: url('2.jpg');
+  background-color: #f8f4e9;
+}
+.section3 { 
+  background-image: url('3.jpg');
+  background-color: #f8f4e9;
+}
+
+@media (max-height: 700px) {
   .section {
     height: 100vh;
-    aspect-ratio: unset;
-    background-size: auto 100%;
+    max-height: none;
   }
 }
-
-.section1 { background-image: url('1.jpg'); }
-.section2 { background-image: url('2.jpg'); }
-.section3 { background-image: url('3.jpg'); }
 /* ============================================ */
 
 /* ===== HERO STYLES ===== */
