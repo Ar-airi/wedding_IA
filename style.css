@@ -9,6 +9,9 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   background-color: #f8f4e9 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* ============================ */
 
@@ -17,10 +20,11 @@ html, body {
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');
 
-/* ===== YOUR ORIGINAL BACKGROUND SETTINGS ===== */
+/* ===== BACKGROUND SECTION WITH CONTAINED SHAPE ===== */
 .section {
   width: 100%;
-  min-height: 100vh;
+  max-width: 430px; /* optional: limit max width */
+  aspect-ratio: 765 / 1436; /* phone-like shape */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,21 +33,24 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin: 0 auto;
+}
+
+/* Override for small height screens */
+@media (max-height: 500px) {
+  .section {
+    height: 100vh;
+    aspect-ratio: unset;
+    background-size: auto 100%;
+  }
 }
 
 .section1 { background-image: url('1.jpg'); }
 .section2 { background-image: url('2.jpg'); }
 .section3 { background-image: url('3.jpg'); }
-
-/* Special ratio handling (YOUR ORIGINAL) */
-@media (max-aspect-ratio: 795/1436) {
-  .section {
-    background-size: auto 100%;
-  }
-}
 /* ============================================ */
 
-/* ===== YOUR EXACT HERO STYLES ===== */
+/* ===== HERO STYLES ===== */
 .hero {
   width: 80%;
   max-width: 300px;
@@ -95,7 +102,7 @@ html, body {
   margin-top: 1rem;
   letter-spacing: 1px;
 }
- 
+
 .hero h5 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
@@ -155,7 +162,7 @@ html, body {
 }
 /* ==================================== */
 
-/* ===== YOUR ORIGINAL RSVP STYLES ===== */
+/* ===== RSVP STYLES ===== */
 .container {
   background: rgba(255, 255, 255, 0.5);
   padding: 1.5rem;
@@ -205,20 +212,20 @@ html, body {
 }
 /* ==================================== */
 
-/* ===== YOUR ORIGINAL MOBILE STYLES ===== */
+/* ===== MOBILE STYLES ===== */
 @media (max-width: 480px) {
   .hero {
     width: 90%;
   }
-  
+
   .hero h1 {
     font-size: 1.3rem;
   }
-  
+
   .hero h2 {
     font-size: 1.2rem;
   }
-  
+
   .container {
     padding: 1rem;
   }
