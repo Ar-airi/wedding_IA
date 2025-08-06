@@ -9,6 +9,8 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  scroll-behaviour: smooh;
+  scroll-snap-type: y proximity;
   background-color: #f8f4e9 !important;
 }
 
@@ -27,7 +29,9 @@ body {
   height: 100vh; /* Each section takes full viewport height */
   margin: 0 auto;
   position: relative;
-  scroll-snap-align: start; /* Snap to each section */
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  scroll-margin-top: 0;/* Snap to each section */
   
   /* Background styling */
   background-size: contain;
@@ -224,3 +228,4 @@ body {
     padding: 1rem;
   }
 }
+
