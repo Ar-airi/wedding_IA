@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  overflow-x: hidden;
+}
+
+/* Background Sections - Maintain 795x1436 ratio */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.section1 { background-image: url('1.jpg'); }
+.section2 { background-image: url('2.jpg'); }
+.section3 { background-image: url('3.jpg'); }
+
+/* Hero Text with Custom Color */
+.hero {
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  color: black;
+  line-height: 1.4;
+}
+
+.hero h1 {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(1rem, 3vw, 1rem);
+  font-weight: 550;
+  color: #a68a64;
+  margin-bottom: 1.5rem; 
+  margin-top: 1.5rem;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: #27365a;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 550;
+  line-height: 1;
+}
+
+.hero h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #27365a;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero h4 {
+  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  color: #c9ada7; /* Bronze from your image */
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+ 
+.hero h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; /* Semi-bold for elegance */
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #c9ada7; /* Warm taupe */
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-variant: small-caps; /* Adds subtle elegance */
+}
+
+.hero h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1rem);
+  color: #c9ada7; /* Warm taupe */
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-variant: small-caps;
+  display: block;
+  margin-top: 0.2 rem;
+}
+
+.hero h7 {
+  font-family: 'Great Vibes', cursive; /* Elegant script for names */
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  color: #b8a47e;
+  line-height: 1;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.hero h8 {
+  font-family: 'Taviraj', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: white;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.hero p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    color: white; /* Warm taupe color from your image */
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+
+/* RSVP Section */
+.container {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 350px;
+  color: rgb(0, 0, 0);
+}
+
+.rsvp h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #d8cab8;
+}
+
+.rsvp label {
+  display: block;
+  margin-top: 0.8rem;
+  text-align: left;
+}
+
+.rsvp input,
+.rsvp select {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.3rem 0;
+  border: 1px solid #d8cab8;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.1);
+  color: black;
+}
+
+.rsvp button {
+  background-color: #d8cab8;
+  color: #333;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+#rsvp-response {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #d8cab8;
+}
