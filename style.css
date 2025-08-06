@@ -20,6 +20,7 @@ body {
 .section {
   width: 100%;
   min-height: 100dvh;
+  min-height: 100vh;
   height: auto;
   background-size: cover;
   background-repeat: no-repeat;
@@ -49,11 +50,13 @@ body {
     .section1 {
         background-image: url('1.jpg');
         background-attachment: scroll;
+        min-height: 100dvh;
     }
 
     .section2 {
         background-image: url('2.jpg');
         background-attachment: fixed;
+        min-height:100dvh;
     }
 }
 
@@ -197,5 +200,6 @@ body {
   font-weight: bold;
   color: #d8cab8;
 }
+
 
 
