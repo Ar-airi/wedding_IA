@@ -19,7 +19,7 @@ body {
 /* Background Sections - Maintain 795x1436 ratio */
 .section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   height: auto;
   background-size: cover;
   background-repeat: no-repeat;
@@ -197,4 +197,5 @@ body {
   font-weight: bold;
   color: #d8cab8;
 }
+
 
