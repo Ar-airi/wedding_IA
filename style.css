@@ -52,18 +52,6 @@ html, body {
   background-attachment: fixed !important;
 }
 
-/* On mobile, use background-size: cover */
-@media (max-width: 768px) {
-  .section {
-    background-size: cover;
-    background-attachment: scroll !important;
-  }
-
-  .section2 {
-    background-attachment: fixed !important;
-  }
-}
-
 .inline-names {
   display: flex;
   justify-content: center;
@@ -155,6 +143,22 @@ html, body {
   color: black;
   letter-spacing: 0.5px;
   margin: 1.5rem 0;
+}
+
+/* On mobile, use background-size: cover */
+@media (max-width: 768px) {
+  .section {
+    background-size: cover;
+    background-attachment: scroll !important;
+  }
+
+  .section2 {
+    background-attachment: fixed !important;
+  }
+  
+  .hero p {
+    font-size: clamp(2rem, 5vw, 2rem);
+  }
 }
 
 /* RSVP Section */
