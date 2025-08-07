@@ -17,14 +17,16 @@ html, body {
   scroll-behavior: smooth;
   font-family: 'Georgia', serif;
   color-scheme: light only;
-  background-color: #fdf2de;
+  background-color: #e7d7bb;
   overflow-x: hidden;
 }
 
 /* Section Backgrounds */
 .section {
-  width: 100%;
+  width: 80%;
+  max-width: 350px;
   min-height: 100vh;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -184,4 +186,3 @@ html, body {
   font-weight: bold;
   color: #d8cab8;
 }
-
