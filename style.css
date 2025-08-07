@@ -157,7 +157,8 @@ html, body {
   }
   
   .hero p {
-    font-size: clamp(2rem, 3vw, 1.5rem);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+
   }
 }
 
@@ -209,5 +210,6 @@ html, body {
   font-weight: bold;
   color: #d8cab8;
 }
+
 
 
