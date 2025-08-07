@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
 
 html {
-  font-size: clamp(12px, 2vw, 18px);
+  font-size: clamp(14px, 2vw, 18px);
 }
 
 /* Reset & Prevent Dark Mode */
@@ -293,7 +293,7 @@ html, body {
     padding: 1rem;
     width: 90%;
   }
-  
+
 }
 
 
