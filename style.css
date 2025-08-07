@@ -68,6 +68,10 @@ html, body {
   padding: 0;
   line-height: 1.2;
   vertical-align: baseline;
+  align-item: center;
+  display: inline-flex;
+  gap: 0.5;
+  flex-wrap: nowrap;
 }
 
 .inline-names span.name-initial {
@@ -283,5 +287,6 @@ html, body {
     background-size: cover;
   }
 }
+
 
 
