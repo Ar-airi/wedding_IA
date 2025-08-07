@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
   <title>Aqielah & Idzuddin</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Section 1 -->
-  <div class="section section1">
-  </div>
+  <div class="section section1"></div>
 
   <!-- Section 2 -->
   <div class="section section2">
@@ -25,10 +26,14 @@
       <h2 style="display: inline;">M</h2>
       <h6 style="display: inline;">OHAMAD IDZUDDIN</h6>
       <h1>BIN KAMARUDDIN</h1>
+
       <br><br><br><br><br>
+
       <h7>Butiran Majlis<br>Event Details</h7>
       <p>Sabtu/Saturday<br><br>22 November 2025<br><br>Victoria Hall,<br>Kamalinda Events & Wedding,<br>Level UG, Utropolis Marketplace,<br>Jalan Kontraktor U1/14,<br>40150 Shah Alam, Selangor</p>
+
       <br><br><br><br><br>
+
       <h7>Aturcara Majlis<br>Event Program</h7>
       <br><br>
       <p>11:30 am</p>
@@ -39,9 +44,11 @@
       <br>
       <p>4:00 pm</p>
       <h8>Majlis Bersurai<br>Event Ends</h8>
+
       <br><br><br><br>
       <h7>Simpan Tarikh<br>Save The Date</h7>
       <p>Catat dalam kalendar anda<br>Mark your calendar and get ready to celebrate with us</p>
+
       <br><br><br><br>
       <h7>Pertanyaan<br>Enquiry</h7>
       <p>Bagi sebarang pertanyaan, sila hubungi nombor di bawah<br>For any enquiry, you may contact the numbers below</p>
@@ -52,28 +59,27 @@
   <div class="section section2">
     <div class="container">
       <section class="rsvp">
-        <center><h9>RSVP</h9>
+        <center>
+          <h9>RSVP</h9>
           <p>Mohon sahkan kehadiran anda sebelum<br>Kindly RSVP before</p>
           <h8>15.10.2025</h8>
-          </center>
+        </center>
         <form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbxYjVFc9ZUxhJyWm-p9tYUy62iQYlqbpCc2pOzIVrEyf6FSsJXJL-fwh-5uMsNHhbIE/exec" method="POST">
-          
           <label for="nama">Nama:</label>
           <input type="text" id="nama" name="Nama" required>
-          
+
           <label for="telefon">Nombor Telefon:</label>
           <input type="tel" id="telefon" name="Nombor_Telefon" required>
-          
+
           <label for="kehadiran">Kehadiran:</label>
           <select id="kehadiran" name="Kehadiran" required>
             <option value="">-- Sila Pilih --</option>
-            <option value="0">0 - Tok dan nok date </option>
+            <option value="0">0 - Tok dan nok date</option>
             <option value="1">1 - yeayy kita pi muah muahh 😘😘</option>
             <option value="2">2 - kita pi tapi bawak pasangan</option>
           </select>
-          
+
           <input type="hidden" name="_captcha" value="false">
-          
           <button type="submit">RSVP</button>
         </form>
         <div id="rsvp-response"></div>
@@ -81,6 +87,14 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Fix mobile gap with dynamic viewport height -->
+  <script>
+    function setVH() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    window.addEventListener('resize', setVH);
+    window.addEventListener('load', setVH);
+  </script>
 </body>
 </html>
