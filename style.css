@@ -160,6 +160,18 @@ html, body {
     font-size: clamp(1.3rem, 2.5vw, 1.8rem);
 
   }
+
+  .hero h1 {
+    font-size: clamp(1rem, 2.8vw, 1.3rem);
+  }
+
+  .hero h5 {
+    font-size: clamp(2.2rem, 7vw, 3.3rem);
+  }
+
+  .hero h6 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
 }
 
 /* RSVP Section */
@@ -210,6 +222,7 @@ html, body {
   font-weight: bold;
   color: #d8cab8;
 }
+
 
 
 
