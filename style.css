@@ -172,6 +172,10 @@ html, body {
   .hero h6 {
     font-size: clamp(1.5rem, 3vw, 2rem);
   }
+
+  .hero h4 {
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+  }
 }
 
 /* RSVP Section */
@@ -222,6 +226,7 @@ html, body {
   font-weight: bold;
   color: #d8cab8;
 }
+
 
 
 
