@@ -1,66 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');/* Reset & Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Petit+Formal+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
-
+/* Reset & Prevent Dark Mode */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
   font-family: 'Georgia', serif;
+  color-scheme: light only;
+  background-color: white;
+  color: black;
   overflow-x: hidden;
 }
 
-/* Background Sections - Maintain 795x1436 ratio */
+/* Section Backgrounds */
 .section {
   width: 100%;
-  min-height: 100dvh;
   min-height: 100vh;
-  height: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: scroll;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: black;
-  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: contain;
   padding: 60px 20px;
+  text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  box-sizing: border-box;
 }
 
-.section1 { background-image: url('1.jpg'); }
-.section2 { 
-  background-image: url('2.jpg'); 
-  background-attachment:fixed;
+.section1 {
+  background-image: url('1.jpg');
 }
 
+.section2 {
+  background-image: url('2.jpg');
+  background-attachment: fixed;
+}
+
+/* On mobile, use background-size: cover */
 @media (max-width: 768px) {
-    .section1 {
-        background-image: url('1.jpg');
-        background-attachment: scroll;
-        min-height: 100dvh;
-    }
-
-    .section2 {
-        background-image: url('2.jpg');
-        background-attachment: fixed;
-        min-height:100dvh;
-    }
+  .section {
+    background-size: cover;
+    background-attachment: scroll !important;
+  }
 }
 
-/* Hero Text with Custom Color */
+/* Hero Section */
 .hero {
   width: 80%;
   max-width: 350px;
@@ -69,26 +67,16 @@ body {
   line-height: 1.4;
 }
 
-.hero h1 {
+.hero h1,
+.hero p {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: black; /* Warm taupe color from your image */
+  color: black;
   line-height: 1.6;
   letter-spacing: 0.5px;
-  text-align: center;
   margin: 1.5rem 0;
-  margin-top: -0.8rem !important;
-}
-
-.hero h4 {
-  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 450;
-  color: #7f4f24; /* Bronze from your image */
-  margin-top: 1rem;
-  letter-spacing: 1px;
 }
 
 .hero h2 {
@@ -97,18 +85,25 @@ body {
   font-weight: 550;
   color: #7f4f24;
   line-height: 1;
-  text-align: center;
+  margin: 1.5rem 0;
 }
- 
+
+.hero h4 {
+  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 450;
+  color: #7f4f24;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
 .hero h5 {
   font-family: 'Mrs Saint Delafield', cursive;
   font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 550;
   color: #7f4f24;
   line-height: 1;
-  text-align: center;
 }
-
 
 .hero h6 {
   font-family: 'Cormorant Garamond', serif;
@@ -117,15 +112,13 @@ body {
   line-height: 1.6;
   color: #7f4f24;
   text-transform: uppercase;
-
 }
 
 .hero h7 {
-  font-family: 'Great Vibes', cursive; /* Elegant script for names */
+  font-family: 'Great Vibes', cursive;
   font-size: clamp(2rem, 6vw, 3rem);
   color: #582f0e;
   line-height: 1;
-  text-align: center;
   margin: 1rem 0;
 }
 
@@ -136,19 +129,6 @@ body {
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   color: black;
   letter-spacing: 0.5px;
-  text-align: center;
-  margin: 1.5rem 0;
-}
-
-.hero p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: black; /* Warm taupe color from your image */
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  text-align: center;
   margin: 1.5rem 0;
 }
 
@@ -159,7 +139,7 @@ body {
   border-radius: 10px;
   width: 90%;
   max-width: 350px;
-  color: rgb(0, 0, 0);
+  color: black;
 }
 
 .rsvp h2 {
@@ -200,6 +180,3 @@ body {
   font-weight: bold;
   color: #d8cab8;
 }
-
-
-
