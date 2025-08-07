@@ -31,7 +31,7 @@ html, body {
   align-items: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: contain;
   padding: 60px 20px;
   text-align: center;
@@ -43,20 +43,43 @@ html, body {
 
 .section1 {
   background-image: url('1.jpg');
-  background-attachment: fixed !important;
+  background-attachment: fixed ;
 }
 
 .section2 {
   background-image: url('2.jpg');
-  background-attachment: fixed !important;
+  background-attachment: fixed ;
 }
 
 .inline-names {
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: baseline;
   gap: 0.25rem;
-  margin-bottom: -0.3rem;
+  margin-bottom: -0.2rem;
+}
+
+.inline-names span {
+  margin: -0.2rem;
+  padding: 0;
+  line-height: 1.2;
+  vertical-align: baseline;
+}
+
+.inline-names span.name-initial {
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: #7f4f24;
+  line-height: 1;
+  margin-right: 0.2rem;
+}
+
+.inline-names span.name-rest {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #7f4f24;
+  letter-spacing: 0.05rem;
+  line-height: 1;
 }
 
 /* Hero Section */
@@ -68,71 +91,65 @@ html, body {
   line-height: 1.4;
 }
 
-.hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: black;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  margin: -0.5;
-}
-
 .hero p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 550;
-  font-size: clamp(1rem, 3vw, 1.1rem);
-  color: black;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  margin: 1.5rem 0;
-}
-
-.hero h4 {
-  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 450;
-  color: #7f4f24;
-  margin-top: 1rem;
-  letter-spacing: 1px;
-}
-
-.hero h5 {
-  font-family: 'Mrs Saint Delafield', cursive;
-  font-size: clamp(2rem, 6vw, 3rem);
-  font-weight: 550;
-  color: #7f4f24;
-  line-height: 1;
-  margin-bottom: -0.5rem;
-}
-
-.hero h6 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
-  line-height: 1.6;
-  color: #7f4f24;
-  text-transform: uppercase;
-  margin-bottom: -0.5rem;
-}
-
-.hero h7 {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 6vw, 3rem);
-  color: #582f0e;
-  line-height: 1;
-  margin-top: 1rem 0;
-}
-
-.hero h8 {
   font-family: 'Taviraj', serif;
   font-style: italic;
   font-weight: 300;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   color: black;
   letter-spacing: 0.5px;
-  margin: 1.5rem 0;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.hero h1 {
+  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 450;
+  color: #7f4f24;
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.hero h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 550;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: #7f4f24;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+  line-height: 1.6;
+}
+
+.hero h6 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: #582f0e;
+  font-weight: 250;
+  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.save-date-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+}
+
+.save-date-buttons a {
+  text-decoration: none; /* this removes underline on the <a> itself */
 }
 
 .save-date-buttons a button {
@@ -144,14 +161,24 @@ html, body {
   border: none;
   background-color: #e7d7bb;
   color: #7f4f24;
-;
   font-weight: 600;
   transition: background-color 0.3s ease;
+
+  width: 300px;
+  height: 50px;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: balance;
 }
 
 .save-date-buttons a button:hover {
-  background-color: #e7d7bb;
+  background-color: #e7d7bb; /* same color = no hover change */
 }
+
 
 /* Timeline Styles */
 .timeline-container {
@@ -180,58 +207,6 @@ html, body {
 .timeline-event {
   flex-grow: 1;
   padding-left: 1rem;
-}
-
-.timeline-event-malay {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: black;
-}
-
-.timeline-event-english {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 450;
-  font-size: clamp(0.8rem, 2.2vw, 1rem);
-  color: #555;
-}
-
-/* Contact Box Styles */
-.contact-container-boxes {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.contact-box {
-  flex: 1 1 45%;
-  max-width: 200px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #d8cab8;
-  border-radius: 6px;
-  padding: 0.8rem 1.2rem;
-  text-align: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  min-width: 120px;
-}
-
-
-.contact-box-name {
-  font-weight: 550;
-  color: black;
-  margin-bottom: 0.3rem;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-}
-
-.contact-box-number {
-  color: black;
-  letter-spacing: 0.5px;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
 }
 
 /* RSVP Section */
@@ -287,46 +262,10 @@ html, body {
 @media (max-width: 768px) {
   .section {
     background-size: cover;
-    background-attachment: scroll !important;
+    background-attachment: scroll;
   }
 
   .section2 {
-    background-attachment: fixed !important;
-  }
-  
-  .hero p {
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  }
-
-  .hero h1 {
-    font-size: clamp(1rem, 2.8vw, 1.3rem);
-  }
-
-  .hero h5 {
-    font-size: clamp(2.2rem, 7vw, 3.3rem);
-  }
-
-  .hero h6 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-  }
-
-  .hero h4 {
-    font-size: clamp(1.3rem, 4vw, 1.6rem);
-  }
-
-  .hero h7 {
-    font-size: clamp(3rem, 8vw, 4rem);
-  }
-
-  .contact-container-boxes {
-    gap: 1rem; /* Keep the spacing */
-    /* flex-direction: column;  <-- remove or comment this line */
-    flex-wrap: wrap;
-  }
-
-  .contact-box {
-    flex: 1 1 45%;
-    max-width: 200px;
-    margin: 0 auto;
+    background-attachment: fixed;
   }
 }
