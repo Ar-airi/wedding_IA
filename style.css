@@ -23,8 +23,7 @@ html, body {
 
 /* Section Backgrounds */
 .section {
-  width: 80%;
-  max-width: 350px;
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
@@ -45,6 +44,7 @@ html, body {
 
 .section1 {
   background-image: url('1.jpg');
+  background-attachment: fixed !important;
 }
 
 .section2 {
