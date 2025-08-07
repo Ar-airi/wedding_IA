@@ -32,7 +32,10 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
+  
+  /* <-- This is the key: desktop background size */
   background-size: contain;
+  
   padding: 60px 20px;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
@@ -50,16 +53,11 @@ html, body {
   background-attachment: fixed;
 }
 
-/* On mobile, use background-size: cover */
+/* On mobile devices switch to cover */
 @media (max-width: 768px) {
   .section {
-    min-height: 100vh;
-    background-size: cover;
+    background-size: cover !important;
     background-attachment: scroll !important;
-  }
-
-  .section2 {
-    background-attachment: fixed !important;
   }
 }
 
@@ -185,7 +183,3 @@ html, body {
   font-weight: bold;
   color: #d8cab8;
 }
-
-
-
-
