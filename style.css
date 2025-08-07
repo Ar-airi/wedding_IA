@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Petit+Formal+Script&display=swap');
@@ -47,6 +48,7 @@ html, body {
 
 .section2 {
   background-image: url('2.jpg');
+  background-attachment: fixed !important;
 }
 
 /* On mobile, use background-size: cover */
@@ -54,6 +56,10 @@ html, body {
   .section {
     background-size: cover;
     background-attachment: scroll !important;
+  }
+
+  .section2 {
+    background-attachment: fixed !important;
   }
 }
 
