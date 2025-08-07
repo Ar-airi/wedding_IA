@@ -56,22 +56,20 @@ html, body {
 }
 
 .inline-names {
-  display: flex; 
+  display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: nowrap;
   gap: 0.2rem;
-  margin-bottom: -0.2rem;
+  max-width: 100%;
+  white-space: nowrap; /* 💡 Keeps the name on one line */
 }
 
 .inline-names span {
-  margin: -0.2rem;
-  padding: 0;
-  line-height: 1.2;
-  vertical-align: baseline;
-  align-items: center;
-  display: inline-flex;
-  gap: 0.5;
-  flex-wrap: nowrap;
+  display: inline-block;
+  font-size: min(2.2rem, 4vw);
+  line-height: 1;
+  letter-spacing: -1px; /* 💡 Pulls letters slightly closer */
 }
 
 .inline-names span.name-initial {
@@ -220,13 +218,15 @@ html, body {
 .container {
   background: rgba(255, 255, 255, 0.5);
   padding: 1.5rem;
-  max-width: 350px;
-  width: auto;
+  max-width: 90vw; /* ✨ Responsive width */
+  width: fit-content; /* 💡 Makes it wrap the content */
   min-width: 300px;
-  color: black;
-  height: auto;
+  height: auto; /* Let content grow naturally */
   margin: 0 auto;
+  color: black;
+  box-sizing: border-box;
 }
+
 
 .rsvp label {
   display: block;
@@ -288,6 +288,12 @@ html, body {
     background-attachment: fixed;
     background-size: cover;
   }
+
+  .container {
+    padding: 1rem;
+    width: 90%;
+  }
+  
 }
 
 
