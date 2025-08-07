@@ -21,40 +21,39 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Section Backgrounds */
-.section {
-  width: 100%;
+/* Section 1 */
+.section1 {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-image: url('1.jpg');
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
-  background-size: contain;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section 2 */
+.section2 {
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 60px 20px;
-  text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  position: relative;
-  z-index: 0;
+  color: black;
+  text-align: center;
 }
 
-.section1 {
-  background-image: url('1.jpg');
-}
-
-/* Remove background image from section2, use pseudo-element for fixed bg */
-.section2 {
-  background-image: none;
-  position: relative;
-  z-index: 1;
-}
-
-/* Fixed background with pseudo-element */
+/* Fixed background for section2 using ::before */
 .section2::before {
   content: "";
   position: fixed;
@@ -63,14 +62,18 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
-  will-change: transform;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* On mobile devices - keep background size cover */
+/* On mobile, use background-size: cover and no fixed attachment */
 @media (max-width: 768px) {
-  .section {
-    background-size: cover !important;
+  .section1 {
+    background-size: cover;
+  }
+  .section2::before {
+    position: absolute;
+    background-attachment: scroll;
   }
 }
 
@@ -79,8 +82,8 @@ html, body {
   width: 80%;
   max-width: 350px;
   text-align: center;
-  color: black;
   line-height: 1.4;
+  color: black;
 }
 
 .hero h1,
