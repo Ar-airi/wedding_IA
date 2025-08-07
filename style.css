@@ -36,7 +36,7 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: contain;
   padding: 60px 20px;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
@@ -276,7 +276,6 @@ html, body {
   .section {
     background-size: cover;
     background-attachment: fixed;
-    background-size: cover;
   }
 
   .section2 {
@@ -284,4 +283,5 @@ html, body {
     background-size: cover;
   }
 }
+
 
