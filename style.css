@@ -1,26 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');/* Reset & Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Playfair+Display:ital@1&family=Petit+Formal+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
-
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --vh: 1vh;
+}
+
 body {
   font-family: 'Georgia', serif;
   overflow-x: hidden;
+  background: white;
+  color-scheme: light only;
+  color: #fdf2de;
 }
 
-/* Background Sections - Maintain 795x1436 ratio */
+/* Background Sections */
 .section {
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  height: calc(var(--vh, 1vh) * 100);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -36,25 +42,27 @@ body {
   font-style: italic;
   font-weight: 400;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  box-sizing: border-box;
 }
 
 .section1 { background-image: url('1.jpg'); }
 .section2 { 
   background-image: url('2.jpg'); 
-  background-attachment:fixed;
+  background-attachment: fixed;
 }
 
+/* Mobile: use cover instead of contain */
 @media (max-width: 768px) {
-    .section1 {
-        background-image: url('1.jpg');
-        background-attachment: scroll;
-    }
+  .section {
+    background-size: cover;
+  }
 
-    .section2 {
-        background-image: url('2.jpg');
-        background-attachment: fixed;
-    }
+  .section1 {
+    background-attachment: scroll;
+  }
+
+  .section2 {
+    background-attachment: fixed;
+  }
 }
 
 /* Hero Text with Custom Color */
@@ -66,16 +74,20 @@ body {
   line-height: 1.4;
 }
 
-.hero h1 {
+.hero h1,
+.hero p {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: black; /* Warm taupe color from your image */
+  color: black;
   line-height: 1.6;
   letter-spacing: 0.5px;
   text-align: center;
   margin: 1.5rem 0;
+}
+
+.hero h1 {
   margin-top: -0.8rem !important;
 }
 
@@ -83,7 +95,7 @@ body {
   font-size: clamp(1.15rem, 3.5vw, 1.4rem);
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 450;
-  color: #7f4f24; /* Bronze from your image */
+  color: #7f4f24;
   margin-top: 1rem;
   letter-spacing: 1px;
 }
@@ -96,7 +108,7 @@ body {
   line-height: 1;
   text-align: center;
 }
- 
+
 .hero h5 {
   font-family: 'Mrs Saint Delafield', cursive;
   font-size: clamp(2rem, 6vw, 3rem);
@@ -106,7 +118,6 @@ body {
   text-align: center;
 }
 
-
 .hero h6 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
@@ -114,11 +125,10 @@ body {
   line-height: 1.6;
   color: #7f4f24;
   text-transform: uppercase;
-
 }
 
 .hero h7 {
-  font-family: 'Great Vibes', cursive; /* Elegant script for names */
+  font-family: 'Great Vibes', cursive;
   font-size: clamp(2rem, 6vw, 3rem);
   color: #582f0e;
   line-height: 1;
@@ -132,18 +142,6 @@ body {
   font-weight: 300;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   color: black;
-  letter-spacing: 0.5px;
-  text-align: center;
-  margin: 1.5rem 0;
-}
-
-.hero p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: black; /* Warm taupe color from your image */
-  line-height: 1.6;
   letter-spacing: 0.5px;
   text-align: center;
   margin: 1.5rem 0;
@@ -196,4 +194,17 @@ body {
   margin-top: 1rem;
   font-weight: bold;
   color: #d8cab8;
+}
+
+/* Force Light Mode Override */
+@media (prefers-color-scheme: dark) {
+  body, .section, .container, .hero, .rsvp, input, select, button {
+    background-color: white !important;
+    color: black !important;
+    border-color: #d8cab8 !important;
+  }
+
+  ::placeholder {
+    color: #333 !important;
+  }
 }
