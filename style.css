@@ -21,39 +21,43 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Section 1 */
-.section1 {
+/* Section Backgrounds */
+.section {
+  width: 100%;
   min-height: 100vh;
-  background-image: url('1.jpg');
-  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: scroll;
-  position: relative;
-  z-index: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Section 2 */
-.section2 {
-  position: relative;
-  min-height: 100vh;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-size: contain;
   padding: 60px 20px;
+  text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: black;
-  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-/* Fixed background for section2 using ::before */
+/* Section 1 Background */
+.section1 {
+  background-image: url('1.jpg');
+  background-attachment: scroll;
+}
+
+/* Section 2 - fixed background with pseudo-element */
+.section2 {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 60px 20px;
+  color: black;
+}
+
+/* Fixed background image using ::before */
 .section2::before {
   content: "";
   position: fixed;
@@ -66,14 +70,15 @@ html, body {
   pointer-events: none;
 }
 
-/* On mobile, use background-size: cover and no fixed attachment */
+/* Mobile: background-size cover, no fixed */
 @media (max-width: 768px) {
-  .section1 {
-    background-size: cover;
+  .section {
+    background-size: cover !important;
+    padding: 40px 15px;
   }
   .section2::before {
     position: absolute;
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
 }
 
@@ -82,8 +87,10 @@ html, body {
   width: 80%;
   max-width: 350px;
   text-align: center;
-  line-height: 1.4;
   color: black;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1,
@@ -159,6 +166,8 @@ html, body {
   width: 90%;
   max-width: 350px;
   color: black;
+  position: relative;
+  z-index: 2;
 }
 
 .rsvp h2 {
