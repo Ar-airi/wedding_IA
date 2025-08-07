@@ -56,6 +56,10 @@ html, body {
     background-size: cover;
     background-attachment: scroll !important;
   }
+
+  .section2 {
+    background-attachment: fixed !important;
+  }
 }
 
 /* Hero Section */
@@ -180,3 +184,4 @@ html, body {
   font-weight: bold;
   color: #d8cab8;
 }
+
