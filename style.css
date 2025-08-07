@@ -56,12 +56,20 @@ html, body {
 @media (max-width: 768px) {
   .section {
     background-size: cover;
-    background-attachment: fixed !important;
+    background-attachment: scroll !important;
   }
 
   .section2 {
     background-attachment: fixed !important;
   }
+}
+
+.inline-names {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: -0.3rem; /* reduce space before <h1> */
 }
 
 /* Hero Section */
@@ -73,12 +81,21 @@ html, body {
   line-height: 1.4;
 }
 
-.hero h1,
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: black;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin: -0.5;
+}
+
 .hero p {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-weight: 400;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: 550;
+  font-size: clamp(1rem, 3vw, 1.1rem);
   color: black;
   line-height: 1.6;
   letter-spacing: 0.5px;
@@ -109,6 +126,7 @@ html, body {
   font-weight: 550;
   color: #7f4f24;
   line-height: 1;
+  margin-bottom: -0.5rem;
 }
 
 .hero h6 {
@@ -118,6 +136,7 @@ html, body {
   line-height: 1.6;
   color: #7f4f24;
   text-transform: uppercase;
+  margin-bottom: -0.5rem;
 }
 
 .hero h7 {
@@ -125,7 +144,7 @@ html, body {
   font-size: clamp(2rem, 6vw, 3rem);
   color: #582f0e;
   line-height: 1;
-  margin: 1rem 0;
+  margin-top: 1rem 0;
 }
 
 .hero h8 {
@@ -186,4 +205,3 @@ html, body {
   font-weight: bold;
   color: #d8cab8;
 }
-
