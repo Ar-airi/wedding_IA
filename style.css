@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Petit+Formal+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
 
+html {
+  font-size: clamp(12px, 2vw, 18px);
+}
+
 /* Reset & Prevent Dark Mode */
 * {
   margin: 0;
@@ -38,7 +42,7 @@ html, body {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: 1rem;
 }
 
 .section1 {
@@ -68,7 +72,7 @@ html, body {
 
 .inline-names span.name-initial {
   font-family: 'Mrs Saint Delafield', cursive;
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: 3rem;
   color: #7f4f24;
   line-height: 1;
   margin-right: 0.2rem;
@@ -76,7 +80,7 @@ html, body {
 
 .inline-names span.name-rest {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: 2rem;
   color: #7f4f24;
   letter-spacing: 0.05rem;
   line-height: 1;
@@ -95,7 +99,7 @@ html, body {
   font-family: 'Taviraj', serif;
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: 1rem;
   color: black;
   letter-spacing: 0.5px;
   display: block;
@@ -105,7 +109,7 @@ html, body {
 }
 
 .hero h1 {
-  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+  font-size: 1.3rem;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 450;
   color: #7f4f24;
@@ -119,7 +123,7 @@ html, body {
 .hero h2 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 550;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: 1rem;
   color: #7f4f24;
   letter-spacing: 0.5px;
   display: block;
@@ -130,7 +134,7 @@ html, body {
 
 .hero h6 {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: 3rem;
   color: #582f0e;
   font-weight: 250;
   display: block;
@@ -149,7 +153,7 @@ html, body {
 }
 
 .save-date-buttons a {
-  text-decoration: none; /* this removes underline on the <a> itself */
+  text-decoration: none;
 }
 
 .save-date-buttons a button {
@@ -163,7 +167,6 @@ html, body {
   color: #7f4f24;
   font-weight: 600;
   transition: background-color 0.3s ease;
-
   width: 300px;
   height: 50px;
   line-height: 1.4;
@@ -176,7 +179,7 @@ html, body {
 }
 
 .save-date-buttons a button:hover {
-  background-color: #e7d7bb; /* same color = no hover change */
+  background-color: #e7d7bb;
 }
 
 
@@ -198,7 +201,7 @@ html, body {
 .timeline-time {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  font-size: clamp(1rem, 3vw, 1.1rem);
+  font-size: 1.1rem;
   color: #7f4f24;
   width: 80px;
   flex-shrink: 0;
@@ -215,7 +218,6 @@ html, body {
   padding: 1.5rem;
   max-width: 350px;
   color: black;
-
   width: 600px;
   height: 400px;
 }
@@ -248,7 +250,6 @@ html, body {
   color: #7f4f24;
   font-weight: 600;
   transition: background-color 0.3s ease;
-
   width: 300px;
   height: 50px;
   line-height: 1.4;
@@ -261,9 +262,8 @@ html, body {
 }
 
 .rsvp button:hover {
-  background-color: #e7d7bb; /* same color or change to something else if you want */
+  background-color: #e7d7bb;
 }
-
 
 #rsvp-response {
   margin-top: 1rem;
@@ -284,4 +284,3 @@ html, body {
     background-size: contain;
   }
 }
-
