@@ -28,6 +28,19 @@ html, body {
   overflow-x: hidden;
 }
 
+.section-divider {
+  display: flex;
+  justify-content: center;
+  margin: 6vh 0; /* vertical spacing that's also responsive */
+}
+
+.section-divider img {
+  width: 50vw;         /* 60% of screen width */
+  max-width: 300px;    /* Don't get too big on desktop */
+  height: auto;        /* Maintain image aspect ratio */
+  opacity: 0.9;
+}
+
 /* Fullscreen Entry Screen */
 :root {
   --vh: 100vh;
@@ -440,11 +453,18 @@ html, body {
 }
 
 #rsvp-response {
-  margin-top: 1.5rem;
-  font-weight: bold;
-  color: #7f4f24;
-  text-align: center;
   font-family: 'Taviraj', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: #7f4f24;
+  display: none;
+}
+
+#rsvp-response p {
+  margin: 0;
 }
 
 /* Mobile Responsiveness */
@@ -463,26 +483,12 @@ html, body {
   .rsvp select {
     padding: 0.7rem;
   }
-}
 
-@media (max-width: 480px) {
-  .container {
-    padding: 1rem;
+  .section-divider img {
+    width: 80vw;
+    max-width: 300px;
   }
-  
-  .rsvp label {
-    font-size: 0.85rem;
-  }
-  
-  .rsvp input,
-  .rsvp select {
-    padding: 0.6rem;
-    font-size: 0.85rem;
-  }
-}
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
   .section {
     background-size: cover;
     background-attachment: fixed;
@@ -500,4 +506,24 @@ html, body {
 
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .rsvp label {
+    font-size: 0.85rem;
+  }
+  
+  .rsvp input,
+  .rsvp select {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
 
+  .section-divider img {
+    width: 80vw;
+    max-width: 300px;
+  }
+
+}
