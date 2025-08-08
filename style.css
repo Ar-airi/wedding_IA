@@ -359,7 +359,7 @@ html, body {
 .timeline-time {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #7f4f24;
   width: 80px;
   flex-shrink: 0;
@@ -527,3 +527,4 @@ html, body {
   }
 
 }
+
