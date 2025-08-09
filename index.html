@@ -135,7 +135,7 @@
       <p>20.10.2025</p>
       <div class="container">
         <section class="rsvp">
-          <form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbzlyDUyshwZhV6C5H0Jp7DL554wwSuudkZcOnayggB6QP6YNw6En7ZRgLBSXfRepONP/exec" method="POST">
+          <form id="rsvp-form" action="https://script.google.com/macros/s/AKfycbzqNHdAUvFx3yNNPr65DUWRyU74tBmvKjRv0_N_Rpk5AGVN0fQAaej23lhh_EdoD8g0/exec" method="POST">
             <label for="nama">Nama:</label>
             <input type="text" id="nama" name="Nama" required>
 
@@ -161,33 +161,35 @@
 
   <script>
       // Handle RSVP Form Submission
-    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent default form submission
-      
+      document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+    
       const form = e.target;
       const formData = new FormData(form);
       const responseDiv = document.getElementById('rsvp-response');
-      
-      // Show loading state
+    
       responseDiv.innerHTML = '<p style="color:#7f4f24;">Sending your response...</p>';
       responseDiv.style.display = 'block';
-      
+    
       fetch(form.action, {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
+        body: formData
       })
-      .then(() => {
-        // Success message
-        responseDiv.innerHTML = '<p style="color:#7f4f24;">Thank you! Your response has been received.</p>';
-        form.reset(); // Clear the form
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "error") {
+          responseDiv.innerHTML = `<p style="color:#cc0000;">${data.message}</p>`;
+        } else {
+          responseDiv.innerHTML = `<p style="color:#7f4f24;">${data.message}</p>`;
+          form.reset();
+        }
       })
       .catch(error => {
-        // Error message
         responseDiv.innerHTML = '<p style="color:#cc0000;">Oops! Something went wrong. Please try again.</p>';
         console.error('Error:', error);
       });
     });
+
 
     function setVH() {
       let vh = window.innerHeight * 0.01;
@@ -227,5 +229,6 @@
 
 </body>
 </html>
+
 
 
